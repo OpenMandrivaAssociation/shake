@@ -7,7 +7,6 @@ Group:		System/Configuration/Hardware
 URL:		http://vleu.net/shake/
 Source: 	%name-%version.tar.bz2
 BuildRequires: attr-devel
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-build
 
 %description
 Shake is a defragmenter that runs in userspace and works on a live system.
