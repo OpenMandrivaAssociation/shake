@@ -1,6 +1,6 @@
 Name: 		shake
 Version: 	0.29
-Release: 	%mkrel 4
+Release: 	%mkrel 5
 License: 	GPL
 Summary: 	Userspace filesystem defragmenter
 Group:		System/Configuration/Hardware
