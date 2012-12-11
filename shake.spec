@@ -1,37 +1,44 @@
+
 Name: 		shake
-Version: 	0.29
-Release: 	%mkrel 5
-License: 	GPL
-Summary: 	Userspace filesystem defragmenter
+Version: 	0.999
+Release: 	1
+License: 	GPLv3
+Summary: 	User-space file-system defragmenter
 Group:		System/Configuration/Hardware
 URL:		http://vleu.net/shake/
-Source: 	%name-%version.tar.bz2
+Source: 	http://download.savannah.nongnu.org/releases/%name/%name-%version.tar.bz2
 BuildRequires: attr-devel
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-build
+BuildRequires: help2man
+BuildRequires: kdelibs4-devel
 
 %description
-Shake is a defragmenter that runs in userspace and works on a live system.
+Shake is a defragmenter that runs in user space and works on a live system.
 It just works by rewriting fragmented files. But it has some heuristics that
 could make it more efficient than other tools, including defrag and, maybe,
 xfs_fsr.
 
 %prep
-%setup -q
-
+%setup -q -n %name-fs-%version
+chmod 755 COPYING GPL.txt
 
 %build
+%cmake_kde4
 %make
+#debug fix
+cd ..
+chmod 644 {linux,judge,signals,executive,msg,unattr,main}.c
+chmod 644 {signals,executive,msg,judge}.h
 
 %install
-rm -fr $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT{%_bindir,%_mandir/man8}
-%makeinstall_std
+cd build
+DESTDIR=%{buildroot} make install
+cd ..
 
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(0644,root,root,0755)
-%attr(0755,root,root) %{_bindir}/*
+%doc COPYING GPL.txt
+%{_bindir}/*
 %_mandir/man8/*
+
+
 
