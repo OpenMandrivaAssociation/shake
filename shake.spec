@@ -1,7 +1,7 @@
 
 Name: 		shake
 Version: 	0.999
-Release: 	1
+Release: 	2
 License: 	GPLv3
 Summary: 	User-space file-system defragmenter
 Group:		System/Configuration/Hardware
