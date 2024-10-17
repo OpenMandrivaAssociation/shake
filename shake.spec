@@ -5,7 +5,7 @@ Release: 	2
 License: 	GPLv3
 Summary: 	User-space file-system defragmenter
 Group:		System/Configuration/Hardware
-URL:		http://vleu.net/shake/
+URL:		https://vleu.net/shake/
 Source: 	http://download.savannah.nongnu.org/releases/%name/%name-%version.tar.bz2
 BuildRequires: attr-devel
 BuildRequires: help2man
