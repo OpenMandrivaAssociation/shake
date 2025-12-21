@@ -7,6 +7,7 @@ Summary: 	User-space file-system defragmenter
 Group:		System/Configuration/Hardware
 URL:		https://vleu.net/shake/
 Source: 	http://download.savannah.nongnu.org/releases/%name/%name-%version.tar.bz2
+BuildRequires:	make
 BuildRequires: attr-devel
 BuildRequires: help2man
 BuildRequires: kdelibs4-devel
